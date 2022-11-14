@@ -1,14 +1,14 @@
 # Workout CRUD
 
-
 Exercise
-``` json
+```
 {
   name: String  
   image: String
 }
 ```
 
+ExerciseSet
 ```
 {
   reps: Integer
