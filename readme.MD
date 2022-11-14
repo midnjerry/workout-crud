@@ -1,19 +1,28 @@
-Exercise
-{
-  Name: Dumbbell Bench Press
-  Image: 
-}
+# Workout CRUD
 
-ExerciseSet
+
+Exercise
+``` json
 {
-  Integer: Repetitions
-  Integer: Weight
-  Integer: Duration
-  Exercise: Exercise
+  name: String  
+  image: String
 }
+```
+
+```
+{
+  reps: Integer
+  weight: Integer
+  duration: Integer
+  exercise: Exercise
+}
+```
 
 Workout
+
+```
 {
-  String name
-  List<ExerciseSet> routine
+  name: String,
+  routine: List<ExerciseSet>
 }
+```
