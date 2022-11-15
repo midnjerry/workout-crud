@@ -1,6 +1,8 @@
 package games.crusader.workoutcrud.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import games.crusader.workoutcrud.model.Workout;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,6 +16,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,9 +42,21 @@ class WorkoutControllerIntegrationTest {
                 .andReturn()
                 .getResponse();
 
-        String expected = openResourceFile("json/getAll_sampleOutput.json");
+        String exampleJson = openResourceFile("json/getAll_sampleOutput.json");
+
         String json = result.getContentAsString();
-        assertEquals(expected, json);
+
+        List<Workout> output = mapper.readValue(json, new TypeReference<List<Workout>>() {
+        });
+
+        // String formattedJson = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(output);
+
+
+        List<Workout> expected = mapper.readValue(exampleJson, new TypeReference<List<Workout>>() {
+        });
+
+        assertEquals(expected.get(0).getName(), output.get(0).getName());
+        assertEquals(expected.get(1).getName(), output.get(1).getName());
     }
 
     private String openResourceFile(String filename) {
