@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Chest Day",
+    "routine": [
+      {
+        "reps": 20,
+        "weight": 220,
+        "duration": 0,
+        "exercise": {
+          "name": "Bench Press",
+          "image": "https://media0.giphy.com/media/QvXVzMT3oziRDud6df/giphy.gif"
+        }
+      },
+      {
+        "reps": 20,
+        "weight": 0,
+        "duration": 120,
+        "exercise": {
+          "name": "Push up",
+          "image": "https://media.tenor.com/gI-8qCUEko8AAAAM/pushup.gif"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Leg Day",
+    "routine": [
+      {
+        "reps": 8,
+        "weight": 350,
+        "duration": 0,
+        "exercise": {
+          "name": "Squat",
+          "image": "https://img-aws.ehowcdn.com/750x428p/s3.amazonaws.com/photography.prod.demandstudios.com/6b3f5ce2-75fe-4ff2-b1b5-896fd85f5f0b.gif"
+        }
+      }
+    ]
+  }
+]
